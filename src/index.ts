@@ -12,9 +12,8 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.get('/', (req:express.Request, res: express.Response, next) => {
+app.get('/', (req: express.Request, res: express.Response, next: express.NextFunction) => {
   res.send('Welcome to this API');
 });
-
 
 app.listen(port);
