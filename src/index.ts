@@ -1,5 +1,7 @@
 import * as express from 'express';
 
+import users from './routes/users';
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -15,5 +17,6 @@ app.use((req, res, next) => {
 app.get('/', (req: express.Request, res: express.Response, next: express.NextFunction) => {
   res.send('Welcome to this API');
 });
+app.use('/users', users);
 
 app.listen(port);
