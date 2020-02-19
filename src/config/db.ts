@@ -1,11 +1,7 @@
 import { Sequelize } from 'sequelize';
 
-const databaseUrl = process.env.DATABASE_URL || 'localhost:5432';
-const pgUser = process.env.PGUSER || 'postgres';
-const pgPassword = process.env.PGPASSWORD || 'postgres';
-console.log(process.env)
-
-const sequelize = new Sequelize(`postgres://${pgUser}:${pgPassword}@${databaseUrl}/nodejs-scaffold`);
+const databaseUrl = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/nodejs-scaffold'
+const sequelize = new Sequelize(databaseUrl);
 
 sequelize.sync();
 
